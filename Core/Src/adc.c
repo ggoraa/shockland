@@ -85,10 +85,13 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* adcHandle)
     /**ADC1 GPIO Configuration
     PA0-WKUP     ------> ADC1_IN0
     PA1     ------> ADC1_IN1
+    PA2     ------> ADC1_IN2
+    PA3     ------> ADC1_IN3
     PA4     ------> ADC1_IN4
-    PA6     ------> ADC1_IN6
+    PA5     ------> ADC1_IN5
     */
-    GPIO_InitStruct.Pin = Left_Up_Potentiometer_Pin|Left_Low_Potentiometer_Pin|Right_Up_Potentiometer_Pin|Right_Low_Potentiometer_Pin;
+    GPIO_InitStruct.Pin = Right_Up_Pot_Pin|Right_Low_Front_Pot_Pin|Right_Low_Back_Pot_Pin|Left_Up_Pot_Pin
+                          |Left_Low_Front_Pot_Pin|Left_Low_Back_Pot_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
@@ -112,10 +115,13 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* adcHandle)
     /**ADC1 GPIO Configuration
     PA0-WKUP     ------> ADC1_IN0
     PA1     ------> ADC1_IN1
+    PA2     ------> ADC1_IN2
+    PA3     ------> ADC1_IN3
     PA4     ------> ADC1_IN4
-    PA6     ------> ADC1_IN6
+    PA5     ------> ADC1_IN5
     */
-    HAL_GPIO_DeInit(GPIOA, Left_Up_Potentiometer_Pin|Left_Low_Potentiometer_Pin|Right_Up_Potentiometer_Pin|Right_Low_Potentiometer_Pin);
+    HAL_GPIO_DeInit(GPIOA, Right_Up_Pot_Pin|Right_Low_Front_Pot_Pin|Right_Low_Back_Pot_Pin|Left_Up_Pot_Pin
+                          |Left_Low_Front_Pot_Pin|Left_Low_Back_Pot_Pin);
 
   /* USER CODE BEGIN ADC1_MspDeInit 1 */
 

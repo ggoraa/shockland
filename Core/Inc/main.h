@@ -57,37 +57,30 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define B1_Pin GPIO_PIN_13
-#define B1_GPIO_Port GPIOC
-#define B1_EXTI_IRQn EXTI15_10_IRQn
-#define Left_Up_Potentiometer_Pin GPIO_PIN_0
-#define Left_Up_Potentiometer_GPIO_Port GPIOA
-#define Left_Low_Potentiometer_Pin GPIO_PIN_1
-#define Left_Low_Potentiometer_GPIO_Port GPIOA
-#define MSP_TX_Pin GPIO_PIN_2
-#define MSP_TX_GPIO_Port GPIOA
-#define MSP_RX_Pin GPIO_PIN_3
-#define MSP_RX_GPIO_Port GPIOA
-#define Right_Up_Potentiometer_Pin GPIO_PIN_4
-#define Right_Up_Potentiometer_GPIO_Port GPIOA
-#define LD2_Pin GPIO_PIN_5
-#define LD2_GPIO_Port GPIOA
-#define Right_Low_Potentiometer_Pin GPIO_PIN_6
-#define Right_Low_Potentiometer_GPIO_Port GPIOA
-#define Right_Low_Motor_Pin GPIO_PIN_8
-#define Right_Low_Motor_GPIO_Port GPIOA
-#define Right_Up_Motor_Pin GPIO_PIN_9
-#define Right_Up_Motor_GPIO_Port GPIOA
-#define Left_Low_Motor_Pin GPIO_PIN_10
+#define Right_Up_Pot_Pin GPIO_PIN_0
+#define Right_Up_Pot_GPIO_Port GPIOA
+#define Right_Low_Front_Pot_Pin GPIO_PIN_1
+#define Right_Low_Front_Pot_GPIO_Port GPIOA
+#define Right_Low_Back_Pot_Pin GPIO_PIN_2
+#define Right_Low_Back_Pot_GPIO_Port GPIOA
+#define Left_Up_Pot_Pin GPIO_PIN_3
+#define Left_Up_Pot_GPIO_Port GPIOA
+#define Left_Low_Front_Pot_Pin GPIO_PIN_4
+#define Left_Low_Front_Pot_GPIO_Port GPIOA
+#define Left_Low_Back_Pot_Pin GPIO_PIN_5
+#define Left_Low_Back_Pot_GPIO_Port GPIOA
+#define Left_Low_Motor_Pin GPIO_PIN_8
 #define Left_Low_Motor_GPIO_Port GPIOA
-#define Left_Up_Motor_Pin GPIO_PIN_11
+#define Left_Up_Motor_Pin GPIO_PIN_9
 #define Left_Up_Motor_GPIO_Port GPIOA
-#define TMS_Pin GPIO_PIN_13
-#define TMS_GPIO_Port GPIOA
-#define TCK_Pin GPIO_PIN_14
-#define TCK_GPIO_Port GPIOA
-#define SWO_Pin GPIO_PIN_3
-#define SWO_GPIO_Port GPIOB
+#define Right_Low_Motor_Pin GPIO_PIN_10
+#define Right_Low_Motor_GPIO_Port GPIOA
+#define Right_Up_Motor_Pin GPIO_PIN_11
+#define Right_Up_Motor_GPIO_Port GPIOA
+#define MSP_TX_Pin GPIO_PIN_6
+#define MSP_TX_GPIO_Port GPIOB
+#define MSP_RX_Pin GPIO_PIN_7
+#define MSP_RX_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

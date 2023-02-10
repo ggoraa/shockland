@@ -1,0 +1,48 @@
+version: '3'
+
+vars:
+  C_SOURCES: >-
+    Core/Src/*.c
+    Core/Inc/*.h
+  VERSION: "0.1.0"
+  BUILD_TIME:
+    sh: date +%s 
+
+tasks:
+  format:
+    cmds:
+      - clang-format -i {{.C_SOURCES}}
+  postgen:
+    desc: Run this command after generating code in STM32CubeMX.
+    cmds:
+      - task: format
+      - rm Makefile | true
+  make:
+    desc: Builds, or, "makes" firmwares for both the system and remote.
+    dir: build
+    cmds:
+      - make -j8
+  configure:
+    desc: Configures the build configuration.
+    cmds:
+      - rm -rf build
+      - mkdir build
+      - cd build && CMAKE_BUILD_TYPE=$BUILD_TYPE cmake ..
+    env:
+      BUILD_TYPE: Debug
+  clean:
+    desc: Cleans the build.
+    cmds:
+      - rm -rf build
+  release:
+    desc: Just compiles release binaries, what else do you expect? :)
+    cmds:
+      - task: clean
+      - task: configure
+        env:
+          BUILD_TYPE: Release
+      - task: make
+  flash:
+    desc: Flashes the firmware to the LGCU through ST-LINK using OpenOCD.
+    cmds:
+      - openocd -f openocd.cfg -c "program ../build/shockland.elf verify reset exit"

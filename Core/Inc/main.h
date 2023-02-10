@@ -1,21 +1,21 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file           : main.h
-  * @brief          : Header for main.c file.
-  *                   This file contains the common defines of the application.
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2023 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file           : main.h
+ * @brief          : Header for main.c file.
+ *                   This file contains the common defines of the application.
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2023 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
@@ -57,6 +57,8 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define Status_LED_Pin GPIO_PIN_13
+#define Status_LED_GPIO_Port GPIOC
 #define Right_Up_Pot_Pin GPIO_PIN_0
 #define Right_Up_Pot_GPIO_Port GPIOA
 #define Right_Low_Front_Pot_Pin GPIO_PIN_1
@@ -69,6 +71,16 @@ void Error_Handler(void);
 #define Left_Low_Front_Pot_GPIO_Port GPIOA
 #define Left_Low_Back_Pot_Pin GPIO_PIN_5
 #define Left_Low_Back_Pot_GPIO_Port GPIOA
+#define Left_Low_Lock_Pin GPIO_PIN_10
+#define Left_Low_Lock_GPIO_Port GPIOB
+#define Left_Up_Lock_Pin GPIO_PIN_11
+#define Left_Up_Lock_GPIO_Port GPIOB
+#define Right_Low_Lock_Pin GPIO_PIN_12
+#define Right_Low_Lock_GPIO_Port GPIOB
+#define Right_Up_Lock_Pin GPIO_PIN_13
+#define Right_Up_Lock_GPIO_Port GPIOB
+#define Suspension_Lock_Pin GPIO_PIN_14
+#define Suspension_Lock_GPIO_Port GPIOB
 #define Left_Low_Motor_Pin GPIO_PIN_8
 #define Left_Low_Motor_GPIO_Port GPIOA
 #define Left_Up_Motor_Pin GPIO_PIN_9

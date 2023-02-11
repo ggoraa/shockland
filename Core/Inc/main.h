@@ -54,11 +54,19 @@ void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
 
+void SetMotorPWM(uint8_t motor, uint8_t percentage);
+
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define MotorID_Left_Up 0x0
+#define MotorID_Left_Low 0x4
+#define MotorID_Right_Up 0x8
+#define MotorID_Right_Low 0xC
 #define Status_LED_Pin GPIO_PIN_13
 #define Status_LED_GPIO_Port GPIOC
+#define Landing_Lights_Pin GPIO_PIN_14
+#define Landing_Lights_GPIO_Port GPIOC
 #define Right_Up_Pot_Pin GPIO_PIN_0
 #define Right_Up_Pot_GPIO_Port GPIOA
 #define Right_Low_Front_Pot_Pin GPIO_PIN_1

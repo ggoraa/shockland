@@ -73,8 +73,7 @@ int main(void) {
      * Configuration--------------------------------------------------------*/
 
     /* Reset of all peripherals, Initializes the Flash interface and the
-     * Systick.
-     */
+     * Systick. */
     HAL_Init();
 
     /* USER CODE BEGIN Init */
@@ -96,13 +95,14 @@ int main(void) {
     MX_USART1_UART_Init();
     /* USER CODE BEGIN 2 */
     HAL_ADC_Start_DMA(&hadc1, potentiometer_values, 6);
+    HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_ALL);
     /* USER CODE END 2 */
 
     /* Infinite loop */
     /* USER CODE BEGIN WHILE */
     while (1) {
         /* USER CODE END WHILE */
-        
+
         /* USER CODE BEGIN 3 */
     }
     /* USER CODE END 3 */
@@ -148,6 +148,10 @@ void SystemClock_Config(void) {
 }
 
 /* USER CODE BEGIN 4 */
+
+void SetMotorPWM(uint8_t motor, uint8_t percentage) {
+    __HAL_TIM_SetCompare(&htim1, motor, percentage);
+}
 
 /* USER CODE END 4 */
 
